@@ -7,4 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
-      - run: echo hello
+      - run: echo hello > file.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: file.txt
